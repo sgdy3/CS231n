@@ -1,0 +1,9 @@
+Neural Networks
+=======
+
+# Backword propgation
+Decompose the whole caculating formular into multiple connected cells. Each cell containing inputs, func and output. When we deploy forward propgation, we need to caculate the output of local func with respect to input. When we deploy backward propgation , according to train rule, we just need to caculate the value of downstream gradient times local gradient which is the derivative of func with respect to inputs. <br>
+To make this procedure more clear, we can express it in the form of computational graph. And each cell in the graph call be interperted as a gate with attributes of "forward", "backward" and values need to be retain. Then we can ues the graph of gates to represent a nerual network.
+# Neural networks
+In previous learning, we've studied linear regression with the form of $Wx$, and we explained that each row in matrix $W$ can be seen as a typic pic for a specified classs. So by caculatin the inner produce of $w_i$ and $x$, we can mearsure the simarlity of $x$ with each class. But an obvious backward for this computation is that each class can only have one template, acctually the intra-class difference may be very large. For example, a horse can stretch it's head in different directions. So a single template may not enough to describe the whole class.<br>
+With a 2-layer neural network: $W_2max(0,W_1x)$, by computng $W_1x$ we can get multiple templates for a single class. Then with activate function, we may find a way to measure the simlarity of $x$ with these templates. At last, we can use matrix $W_2$ to sum the weighed score of each templates and mapping them to final classes. This is an intiution thought of nerual networks. 
